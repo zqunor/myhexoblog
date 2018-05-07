@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: IT民工
+title: 程序小工
 subtitle: Just do it!
 description: 遇见更好的自己
-author: zqunor
+author: 程序小工
 language: zh-Hans
 timezone: Asia/Shanghai 
 
@@ -44,7 +44,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: 程序
 category_map:
 tag_map:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: xups
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
