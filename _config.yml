@@ -6,13 +6,13 @@
 title: 程序小工
 subtitle: Just do it!
 description: 遇见更好的自己
-author: 程序小工
+author: icoder
 language: zh-Hans
 timezone: Asia/Shanghai 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://zqblogs.cn
+url: http://www.i2arch.tech
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -44,7 +44,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: 程序
+default_category: 杂谈
 category_map:
 tag_map:
 

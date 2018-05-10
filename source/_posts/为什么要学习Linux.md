@@ -4,6 +4,7 @@ date: 2018-05-08 16:38:52
 tags:
     - Linux
 category:
+    - Server
     - Linux
 ---
 
