@@ -1,6 +1,6 @@
 ---
 title: 使用Git和Github进行代码管理
-date: 2018-05-16 13:47:52
+date: 2018-04-16 13:47:52
 tags:
     - git
     - github
@@ -24,7 +24,9 @@ category:
 `ssh-keygen`
 
 中间出现提示进行设置 ssh 秘钥的存放地址，此处可直接回车，放到默认的存储位置`/c/Users/Administrator/.ssh/`
+
 <!--more-->
+
 ![](https://images2018.cnblogs.com/blog/1049028/201803/1049028-20180318212746038-1187254415.png)
 
 **3、查看公钥信息**

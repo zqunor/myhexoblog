@@ -11,7 +11,7 @@ category:
     - Sphinx
 ---
 
-由于业务需要，需要做类似淘宝商城商品检索的功能，对于数据量很大的情况，MySQL查询的效率损耗很大，需要使用专门的索引引擎进行搜索查询，实现功能，对于和PHP和Mysql的结合的索引引擎中， xunsearch和sphinx是较为著名的，但由于xunsearch服务器端不支持windows，所以暂且先考虑sphinx的使用。
+由于业务需要，需要做类似淘宝商城商品检索的功能，对于数据量很大的情况，MySQL 查询的效率损耗很大，需要使用专门的索引引擎进行搜索查询，实现功能，对于和 PHP 和 Mysql 的结合的索引引擎中， xunsearch 和 sphinx 是较为著名的，但由于 xunsearch 服务器端不支持 windows，所以暂且先考虑 sphinx 的使用。
 
 <!--more-->
 
@@ -19,7 +19,7 @@ category:
 
 **1.官方下载**
 
-Sphinx下载地址： [下载]
+Sphinx 下载地址： [下载]
 
 **2.解压并重命名**
 
@@ -72,13 +72,14 @@ sql_query		= \
 ```
 
 > index test1{}
+
 ```ini
 # 索引数据存放目录，默认为/var/data/test1
 path = D:\Service\sphinx\data\test1
 
 # 设置中文匹配
-min_word_len    = 1  
-charset_type    = utf-8  
+min_word_len    = 1
+charset_type    = utf-8
 # 指定utf-8的编码表
 charset_table   = 0..9, A..Z->a..z, _, a..z, U+410..U+42F->U+430..U+44F, U+430..U+44F
 min_word_len	= 1
@@ -114,7 +115,7 @@ rt_field = country
 rt_field = traffic
 rt_field = body
 
-# 
+#
 rt_attr_uint	= offerid
 ```
 
@@ -132,6 +133,7 @@ pid_file = D:\Service\sphinx\log\searchd.pid
 > source src1throttled : src1{}
 
 分布式索引的相关配置，没有则可以不修改
+
 > index dist1{}
 
 > indexer{}
@@ -140,7 +142,8 @@ pid_file = D:\Service\sphinx\log\searchd.pid
 
 **5.操作数据库，导入样例数据**
 
-(1)进入到mysql命令行，执行命令
+(1)进入到 mysql 命令行，执行命令
+
 ```bash
 D:\phpStudy\PHPTutorial\MySQL\bin>mysql -uroot -p
 Enter password: *************
@@ -158,12 +161,12 @@ mysql> source /D:\Service\sphinx\etc/eaxmple.sql
 mysql> show tables;
 documents
 tags
-
 ```
 
 **6.生成索引文件**
 
-cmd命令行进入到`sphinx/bin/`目录下
+cmd 命令行进入到`sphinx/bin/`目录下
+
 ```bash
 # 生成索引文件
 > indexer.exe --config sphinx.conf --all
@@ -189,10 +192,10 @@ skipping non-plain index 'dist1'...
 skipping non-plain index 'rt'...
 ```
 
-【注】新版sphinx的bin目录下已经没有search.exe程序，所以不能直接在命令行执行返回结果，只能使用api接口返回数据。
-
+【注】新版 sphinx 的 bin 目录下已经没有 search.exe 程序，所以不能直接在命令行执行返回结果，只能使用 api 接口返回数据。
 
 **7.开启搜索服务，保持后台运行**
+
 ```bash
 > searchd.exe --pidfile
 
@@ -202,28 +205,30 @@ listening on all interfaces, port=9306
 Sphinx 3.0.3-dev (commit facc3fb)
 Copyright (c) 2001-2018, Andrew Aksyonoff
 Copyright (c) 2008-2016, Sphinx Technologies Inc (http://sphinxsearch.com)
-
 ```
 
-## PHP开启sphinx扩展
-**1.下载php_sphinx扩展**: [前往]
+## PHP 开启 sphinx 扩展
 
-具体需要下载的版本需要查看phpinfo信息:
+**1.下载 php_sphinx 扩展**: [前往]
+
+具体需要下载的版本需要查看 phpinfo 信息:
 
     Architecture         ==》x86/x64
     PHP Extension Build  ==》NTS/NS
 
-下载并解压后，将`php_sphinx.dll`文件放到php/ext目录下
+下载并解压后，将`php_sphinx.dll`文件放到 php/ext 目录下
 
-**2.修改php.ini配置文件**
+**2.修改 php.ini 配置文件**
+
 ```ini
 # 在 Dynamic Extensions 列表中添加php_sphinx扩展
 extension=php_sphinx.dll
 ```
 
-修改后重启apache服务
+修改后重启 apache 服务
 
-**3.在phpinfo.php输出的信息中查看sphinx扩展是否安装成功**
+**3.在 phpinfo.php 输出的信息中查看 sphinx 扩展是否安装成功**
+
 ```info
             sphinx
 sphinx support	 enabled
@@ -231,20 +236,22 @@ Version	         1.3.2
 Revision	 $Revision$
 ```
 
-
 ## 代码实现
+
 1.样例数据表`test.documents`记录：
+
 ```info
  id   group_id   group_id2   date_added             title             content
  1    1             5        2018-05-14 09:12:25   test one           this is my test document number one. also checking search within phrases.
  2    1             6        2018-05-14 09:12:25   test two           this is my test document number two
  3    2             7        2018-05-14 09:12:25   another doc        this is another group
- 4    2             8        2018-05-14 09:12:25   doc number four    this is to test groups 
+ 4    2             8        2018-05-14 09:12:25   doc number four    this is to test groups
 ```
 
-2.PHP代码实现
+2.PHP 代码实现
 
 **一般实现**
+
 ```php
 <?php
 require('sphinxapi.php');
@@ -257,11 +264,12 @@ $res = $sphinx->Query($_GET['key'],'*');
 var_dump($res);
 ```
 
-**thinkphp5使用介绍**
+**thinkphp5 使用介绍**
 
 1.将`sphinxapi.php`文件放到`extend`目录下
 
 2.在控制器方法中使用（`app/api/index`）
+
 ```php
 public function test()
 {
@@ -278,61 +286,63 @@ public function test()
 }
 ```
 
-3.url访问：
+3.url 访问：
 `http://localhost/mypro/api/index/test?key=test`
 
 4.输出数据
+
 ```json
 D:\web\COD\api\application\api\controller\Index.php:21:
 array (size=10)
   'error' => string '' (length=0)
   'warning' => string '' (length=0)
   'status' => int 0
-  'fields' => 
+  'fields' =>
     // 查询显示的字段名
     array (size=2)
       0 => string 'title' (length=5)
       1 => string 'content' (length=7)
-  'attrs' => 
+  'attrs' =>
     array (size=2)
       'group_id' => string '1' (length=1)
       'date_added' => string '2' (length=1)
-  'matches' => 
+  'matches' =>
     // 匹配的结果，返回匹配记录的id和权重（权重越大，匹配条件越多）
     array (size=3)
-      0 => 
+      0 =>
         array (size=3)
           'id' => string '1' (length=1)
           'weight' => int 2421
-          'attrs' => 
+          'attrs' =>
             array (size=2)
               ...
-      1 => 
+      1 =>
         array (size=3)
           'id' => string '2' (length=1)
           'weight' => int 2421
-          'attrs' => 
+          'attrs' =>
             array (size=2)
               ...
-      2 => 
+      2 =>
         array (size=3)
           'id' => string '4' (length=1)
           'weight' => int 1442
-          'attrs' => 
+          'attrs' =>
             array (size=2)
               ...
   'total' => int 3
   'total_found' => int 3
   'time' => float 0
-  'words' => 
+  'words' =>
     array (size=1)
-      'test' => 
+      'test' =>
         array (size=2)
           'docs' => int 6
           'hits' => int 10
 ```
 
-## 在ThinkPHP5项目中应用
+## 在 ThinkPHP5 项目中应用
+
 **1.修改配置信息**`sphinx/bin/sphinx.conf`
 
 ```ini
@@ -367,7 +377,8 @@ index rt
 }
 ```
 
-**2.生成索引，并开启searchd服务**
+**2.生成索引，并开启 searchd 服务**
+
 ```bash
 # 生成项目索引
 sphinx/bin/indexer.exe --config sphinx.conf --all
@@ -378,9 +389,9 @@ sphinx/bin/searchd.exe &
 
 **3.程序实现**
 
-sphinx查询返回的结果并不是我们需要的显示结果，所以还需要对结果进行处理，从而获取到我们需要的结果。
+sphinx 查询返回的结果并不是我们需要的显示结果，所以还需要对结果进行处理，从而获取到我们需要的结果。
 
-默认sphinx返回的数据中包含id信息是和数据记录的信息是相关的，所以我们需要通过id到数据库中查询相关信息。
+默认 sphinx 返回的数据中包含 id 信息是和数据记录的信息是相关的，所以我们需要通过 id 到数据库中查询相关信息。
 
 ```php
 public function test()
@@ -401,19 +412,18 @@ public function test()
 
 **4.测试实现**
 
-访问url：
+访问 url：
 `http://localhost/mypro/api/index/test?key=官方`
 
-
 返回结果：
-```json
 
+```json
 D:\web\COD\api\application\api\controller\Index.php:22:
 array (size=10)
   'error' => string '' (length=0)
   'warning' => string '' (length=0)
   'status' => int 0
-  'fields' => 
+  'fields' =>
     array (size=10)
       0 => string 'name' (length=4)
       1 => string 'ename' (length=5)
@@ -425,43 +435,43 @@ array (size=10)
       7 => string 'body' (length=4)
       8 => string 'inventory_title' (length=15)
       9 => string 'shop' (length=4)
-  'attrs' => 
+  'attrs' =>
     array (size=1)
       'offerid' => string '1' (length=1)
-  'matches' => 
+  'matches' =>
     array (size=6)
-      0 => 
+      0 =>
         array (size=3)
           'id' => string '36' (length=2)
           'weight' => int 4667
-          'attrs' => 
+          'attrs' =>
             array (size=1)
               ...
-      1 => 
+      1 =>
         array (size=3)
           'id' => string '19' (length=2)
           'weight' => int 2611
-          'attrs' => 
+          'attrs' =>
             array (size=1)
               ...
       // 此处省略部分数据
   'total' => int 6
   'total_found' => int 6
   'time' => float 0
-  'words' => 
+  'words' =>
     array (size=2)
-      '官' => 
+      '官' =>
         array (size=2)
           'docs' => int 14
           'hits' => int 16
-      '方' => 
+      '方' =>
         array (size=2)
           'docs' => int 70
           'hits' => int 94
 ```
 
-
 对结果进行处理
+
 ```php
 public function test()
 {
@@ -493,6 +503,7 @@ public function test()
 ```
 
 返回结果
+
 ```json
 [
   {
@@ -528,34 +539,33 @@ public function test()
 
 暂且实现如此。
 
-
-
 参考连接：
-> PHP官方手册使用Sphinx介绍：
+
+> PHP 官方手册使用 Sphinx 介绍：
 
 http://www.php.net/manual/zh/book.sphinx.php
 
-> sphinx安装：
+> sphinx 安装：
 
 https://blog.csdn.net/huang2017/article/details/69665057
 
 https://blog.csdn.net/huang2017/article/details/69666154
 
-> 将sphinx服务添加到windows服务：
+> 将 sphinx 服务添加到 windows 服务：
 
 `./searchd.exe --install -c sphinx.conf --servicename s`
 
 https://blog.csdn.net/design321/article/details/8895712
 
-> sphinx使用：
+> sphinx 使用：
 
 https://blog.csdn.net/u010837612/article/details/70827481
 
-> 中文支持（linux系统）
+> 中文支持（linux 系统）
 
 http://www.xuejiehome.com/blread-1283.html
 
-> 中文支持（windows系统）
+> 中文支持（windows 系统）
 
 http://www.phpernote.com/php-template-framework/284.html
 
@@ -564,4 +574,4 @@ http://www.phpernote.com/php-template-framework/284.html
 https://my.oschina.net/guyson/blog/283576
 
 [下载]: http://sphinxsearch.com/downloads/release/
-[前往]: https://pecl.php.net/package/sphinx/1.3.2/windows 
+[前往]: https://pecl.php.net/package/sphinx/1.3.2/windows

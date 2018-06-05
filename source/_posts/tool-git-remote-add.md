@@ -1,6 +1,6 @@
 ---
 title: Git项目管理--将现有项目提交到空仓库
-date: 2018-05-16 13:57:50
+date: 2018-04-16 13:57:50
 tags:
     - git
 category:
@@ -19,7 +19,9 @@ category:
 `git add .`
 
 （可以创建.gitignore 文件忽略不需要加入到版本库中的文件，或单独 git add {filename}将文件加入到版本库）
+
 <!--more-->
+
 3.将暂存区的文件进行提交到版本库
 
 `git commit -m '{描述}'`

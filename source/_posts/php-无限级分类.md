@@ -10,6 +10,7 @@ category:
 ---
 
 ### 1、数据库设计
+
 ```sql
 --创建分类表
 create table `b_category`(
@@ -21,9 +22,11 @@ create table `b_category`(
 `path` varchar(10) comment 'pid+,+id标识，用于无限级分类'
 );
 ```
+
 <!--more-->
 
-### 2、PHP代码实现
+### 2、PHP 代码实现
+
 ```php
 $data = $m->field("*, concat(path,',',id) as paths ")->order('paths')->select();
 
@@ -33,6 +36,7 @@ foreach($data as $k=>$v ){
 ```
 
 ### 3、视图层显示
+
 ```php
 <div class="row cl">
   <label class="dorm-label col-2">描述：</lable>
