@@ -1,5 +1,5 @@
 ---
-title: PHP实现无限级分类
+title: PHP实现无限级分类 -- path标识
 date: 2018-05-16 13:30:34
 tags:
     - php
@@ -9,7 +9,13 @@ category:
     - PHP
 ---
 
-### 1、数据库设计
+在实际项目中经常要用到无限级分类，如多级分类、导航表等。PHP实现无限级分类通常有两种实现方式，一种是利用`path`字段（pid+id）标识当前层级；另一种是利用递归循环`pid`的方式。此处介绍前种方式。
+
+<!--more-->
+
+# PHP实现无限级分类 -- `path`标识
+
+## 1、数据库设计
 
 ```sql
 --创建分类表
@@ -23,9 +29,7 @@ create table `b_category`(
 );
 ```
 
-<!--more-->
-
-### 2、PHP 代码实现
+## 2、PHP 代码实现
 
 ```php
 $data = $m->field("*, concat(path,',',id) as paths ")->order('paths')->select();
@@ -35,7 +39,7 @@ foreach($data as $k=>$v ){
 }
 ```
 
-### 3、视图层显示
+## 3、视图层显示
 
 ```php
 <div class="row cl">

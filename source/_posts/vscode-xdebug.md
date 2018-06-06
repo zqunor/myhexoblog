@@ -2,9 +2,9 @@
 title: VSCode xdebug开发调试PHP
 date: 2018-05-09 16:09:38
 tags:
+    - tool
     - vscoode
     - xdebug
-    - tool
 category:
     - Tool
     - VSCode
@@ -20,18 +20,18 @@ Xdebug 在开发过程中可以帮我们查看具体的运行和步骤，以及�
 
 ### 1.查看插件列表
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-01.png)][1]
+[[avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-01.png)
 
 ### 2.搜索并安装`PHP Debug` (安装 VScode 时选择 PHP 开发相关的话会自动安装)
 
 **PHP Debug**
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-02.png)][2]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-02.png)
 
 ## 二.进行配置
 
 ### 1.给 PHP 安装 Xdebug 扩展(此处使用的是 PHPstudy 集成开发环境)
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-04xdebug.png)][3]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-04xdebug.png)
 
 ### 2.在 php.ini 中添加相关配置
 
@@ -57,18 +57,23 @@ xdebug.idekey = phpstorm
 
 ### 3.在 phpinfo 中查看 xdebug 扩展的信息，验证是否开启成功
 
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/08.png)
+
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/09.png)
+
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/10.png)
+
 ### 4.查看 vscode 中 debug 页面
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-03.png)][4]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-03.png)
 
 ### 5.新建 debug 配置,并选择调试语言
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-05choose.png)][5]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-05choose.png)
 
 ### 6.进行配置
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-05setting.png)][6]
-
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-05setting.png)
 相关配置信息参考：（注意 port 端口号的值，需要与 php.ini 中设置的一样）
 
 ```json
@@ -100,24 +105,25 @@ xdebug.idekey = phpstorm
 
 ### 1.启动 debug(点击绿色小箭头启动)
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06start.png)][7]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06start.png)
 
 显示出`调试小窗口`
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06startbanner.png)][8]
+
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06startbanner.png)
 
 ### 2.开启自动附加(单击即可切换开关)
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06startfooter.png)][9]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06startfooter.png)
 
 ### 3.设置断点(行号前点击即可出现红色小断点)
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-07duandian.png)][10]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-07duandian.png)
 
 ### 4.在浏览器中访问设置断点的程序
 
 ### 5.访问后会自动跳转到 VSCode，并显示出断点标记，并显示相关执行结果
 
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-07start.png)][11]
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-07start.png)
 
 ### 6.在`调试小窗口`中进行单步调试或单步跳过等操作
 
@@ -126,20 +132,8 @@ xdebug.idekey = phpstorm
 1.注意**自动附加**是否是开启状态
 
 2.注意端口号是否冲突（点击下部玫红色状态栏的`Listen for XDebug`后，会弹出选择 debug 设置如果端口设置有问题的话，会在选择后弹出错误提示）
-[![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-08port.png)][12]
+
+![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-08port.png)
 
 (设置小图标后打开调试控制台也可以显示相关错误提示，注意查看即可)
 将`launch.json`的端口号修改未被占用的号，并且修改`php.ini`中 xdebug 的配置
-
-[1]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-01.png
-[2]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-02.png
-[3]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-04xdebug.png
-[4]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-03.png
-[5]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-05choose.png
-[6]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-05setting.png
-[7]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06start.png
-[8]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06startbanner.png
-[9]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-06startfooter.png
-[10]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-07duandian.png
-[11]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-07start.png
-[12]: https://raw.githubusercontent.com/zqunor/MarkdownPic/master/vscode-debug-08port.png
