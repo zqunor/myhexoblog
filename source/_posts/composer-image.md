@@ -7,6 +7,7 @@ tags:
 category:
     - Tool
     - Composer
+toc: true
 ---
 
 使用 composer 时，输入命令执行后半天没有反应，并最后是失败的消息。如下载项目中的框架文件时：

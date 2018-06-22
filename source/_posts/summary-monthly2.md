@@ -5,6 +5,7 @@ tags:
     - 工作总结
 category:
     - 工作总结
+toc: true
 ---
 
 从 2018.4.2 工作以来，不知不觉已经工作两个多月，并在昨天约谈从这个月开始转正。从刚开始的自己学习，到逐渐接触公司的项目，并完成交付的功能模块，学到了很多，也发现了自己存在的不足，所以作此总结，激励自己，并鞭策自己，不骄不躁，不悲不怒，养成良好的心态，并坚持学习，保持热情！
@@ -178,7 +179,7 @@ $sphinx->SetFilter($filterkey, $filtervalue);
   - 需要**删除**的角色|权限 -- 删除 --- array_diff
   - 需要**新增**的角色|权限 -- 新增 --- array_diff
 
-# 二、自我表现
+# 二、自我反思
 
 ## 1.优点
 
@@ -246,3 +247,144 @@ $sphinx->SetFilter($filterkey, $filtervalue);
 - 对别人给予的负面言论有则改之，无则加勉，无需上升到个人情绪的层面
 - 别人错误的指责，表气（更加影响效率和状态）
 - 一切为了提升自己，成为更好的自己
+
+# 四、代码展示
+
+## 1.PHPExcel使用--导出excel
+
+```php
+/**
+ * 导出exml
+ * expTitle 表格标题
+ * expCellName 表格单元格列名
+ * expTableData 数据
+ * setWidth 单元格列宽
+ */
+function ExportExcel($expTitle, $expCellName, $expTableData, $setWidth, $output = 0, $i = 1) {
+    $xlsTitle = iconv('utf-8', 'gb2312', $expTitle); //文件名称
+    $fileName = $expTitle . date('_YmdHis'); //or $xlsTitle 文件名称可根据自己情况设定
+
+    $cellNum = count($expCellName);
+    $dataNum = count($expTableData);
+    $objPHPExcel = new \PHPExcel();
+
+    $cellName = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ');
+    $objPHPExcel->getActiveSheet(0)->mergeCells('A1:' . $cellName[$cellNum - 1] . '1'); //合并单元格
+    $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1', '' . $expTitle . '  Export time:' . date('Y-m-d H:i:s'));
+    $objPHPExcel->getDefaultStyle()->getFont()->setName('Arial');
+    $objPHPExcel->getActiveSheet(0)->getRowDimension(1)->setRowHeight(40);
+    $objPHPExcel->getActiveSheet()->getStyle("A1")->getFont()->setSize(20);
+
+    for ($i = 0; $i < $cellNum; $i++) {
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue($cellName[$i] . '2', $expCellName[$i][1]);
+    }
+    for ($i = 0; $i < $dataNum; $i++) {
+        for ($j = 0; $j < $cellNum; $j++) {
+            //数据
+            $objPHPExcel->getActiveSheet(0)->setCellValue($cellName[$j] . ($i + 3), $expTableData[$i][$expCellName[$j][1]]);
+
+            for ($j = 0; $j < $cellNum; $j++) {
+                $objPHPExcel->getActiveSheet(0)->setCellValue($cellName[$j] . ($i + 3), $expTableData[$i][$expCellName[$j][0]])->getRowDimension($i + 3);
+                foreach ($setWidth as $setWidthk => $setWidthvalue) {
+                    $objPHPExcel->getActiveSheet()->getColumnDimension($setWidthk)->setWidth($setWidthvalue);
+                }
+            }
+        }
+    }
+    if (empty($output)) {
+        header('pragma:public');
+        header('Content-type:application/vnd.ms-excel;charset=utf-8;name="' . $xlsTitle . '.xls"');
+        header("Content-Disposition:attachment;filename=$fileName.xls");
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+    } else {
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $file = ROOT_PATH . 'public' . DS . 'uploads' . DS . 'temp' . DS . 'keywordstemp.' . xls;
+        $objWriter->save($file);
+    }
+    echo '<script>window.close();</script>';
+}
+```
+
+## 2.Sphinx在PHP项目中的应用
+
+### 1). Sphinx配置
+
+```ini
+source keyword
+{
+    # 配置数据库基本信息
+    charset_type    = mysql
+    sql_host        = 127.0.0.1
+    sql_user        = root
+    sql_pass        = 123123
+    sql_dbcharset_type  = goods
+    sql_query_pre   = SET NAMES utf8
+
+    sql_query       = \
+        SELECT id,status,keyword \
+        FROM goods
+
+    # 设置查询条件
+    sql_attr_uint   = status
+}
+
+index keyword
+{
+    # 指定配置的source
+    sourcecharset_type  = keyword
+    # 指定索引数据文件存储路径
+    pathcharset_type    = /usr/local/spinx/var/data/keyword
+    # 指定字符集(新版已废除)
+    charset_type    = utf-8
+    # 检索的字符串编码识别范围
+    charset_table   = 0..9, A..Z->a..z, _, a..z, U+410..U+42F->U+430..U+44F, U+430..U+44F
+    # 支持中文检索(值为1时支持中文，0时不支持中文)
+    ngram_len       = 1
+    # 中文检索的字符编码范围
+    ngram_chars     = U+3000..U+2FA1F
+}
+```
+
+### 2). 公共方法封装
+
+```php
+/**
+ * sphinx搜索
+ *
+ * @param string $key 查询的字符串
+ * @param string $indexFile 索引文件
+ * @param string $filterkey 过滤字段名
+ * @param string $filtervalue 过滤字段值
+ * @return mixed
+ */
+function sphinx($key, $indexFile, $filterkey = '', $filtervalue = [])
+{
+    $sphinx = new \SphinxClient;
+    $sphinx->setServer("localhost", 9312);
+
+    // 设置检索时的过滤条件
+    if (!empty($filterkey)) {
+        $filterRes = $sphinx->SetFilter($filterkey, $filtervalue);
+        if (!$filterRes) {
+            return false;
+        }
+    }
+
+    // 作为数组返回
+    $sphinx->SetArrayResult(true);
+    // 匹配格式  任意匹配
+    $sphinx->setMatchMode(SPH_MATCH_ALL);
+    $sphinx->setMaxQueryTime(3);
+    $sphinx->setLimits(0, 1000);
+
+    // 参数1：查询关键字， 参数2：索引名（所有索引用*）
+    $result = $sphinx->query($key, $indexFile);
+
+    if (empty($result['matches'])) {
+        return null;
+    }
+
+    return $result;
+}
+```

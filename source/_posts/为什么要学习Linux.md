@@ -6,6 +6,7 @@ tags:
 category:
     - Server
     - Linux
+toc: true
 ---
 
 我最开始用 Linux 是被逼的。当时用的是一台旧的笔记本电脑，做一些文字处理的工作。跑 Windows 动不动就死机，无奈之下安装了 Ubuntu。当时只是想找一个 Windows 的替代品。用 Ubuntu 的图形化界面很多，不怎么用命令行，所以总觉得比不上 Windows。当然，基本的功能还是全的。我用那台旧电脑兼职翻译，赚了 2000 块的“巨款”。

@@ -9,6 +9,7 @@ category:
     - Server
     - PHP
     - Sphinx
+toc: true
 ---
 
 由于业务需要，需要做类似淘宝商城商品检索的功能，对于数据量很大的情况，MySQL 查询的效率损耗很大，需要使用专门的索引引擎进行搜索查询，实现功能，对于和 PHP 和 Mysql 的结合的索引引擎中， xunsearch 和 sphinx 是较为著名的，但由于 xunsearch 服务器端不支持 windows，所以暂且先考虑 sphinx 的使用。sphinx 目前已支持简体中文、繁体中文和英文的检索，不需要额外安装插件支持。
@@ -561,7 +562,7 @@ public function test()
 
 只需创建不同的索引源和索引，相应的对应好即可。
 
-实际项目中的sphinx完整配置：
+实际项目中的 sphinx 完整配置：
 
 ```ini
 source keyword
@@ -670,7 +671,6 @@ searchd
   max_batch_queries = 32
 }
 ```
-
 
 ## 六、参考资料：
 

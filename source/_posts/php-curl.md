@@ -7,6 +7,7 @@ tags:
 category:
     - Server
     - PHP
+toc: true
 ---
 
 cURL表示以命令行的形式请求某个url, 提交数据或获取相应数据。在日常的程序开发中会用到，因此，了解cURL的原理和过程，有助于实际工作和项目中的应用。

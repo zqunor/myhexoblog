@@ -1,5 +1,5 @@
 ---
-title: VSCode xdebug开发调试PHP
+title: 【VSCode插件】xdebug开发调试PHP
 date: 2018-05-09 16:09:38
 tags:
     - tool
@@ -8,6 +8,7 @@ tags:
 category:
     - Tool
     - VSCode
+toc: true
 ---
 
 Xdebug 在开发过程中可以帮我们查看具体的运行和步骤，以及每行代码执行的结果，在学习和解决代码问题的时候可以提供非常大的便利。PHPStorm 也可以进行 Xdebug 调试，VScode 也可以进行配置调试，且比 PHPStorm 的配置简单很多，不用每次去创建一个 Server，再创建一个 web page 服务。相比之下，VSCode 的界面好看，且简单方便，值得学习一下。

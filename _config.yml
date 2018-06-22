@@ -8,10 +8,10 @@ subtitle: Just do it!
 description: 遇见更好的自己
 author: icoder
 language: zh-Hans
-timezone: Asia/Shanghai 
+timezone: Asia/Shanghai
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+## If your site is put in a subdirectory, set url as 'http://www.i2arch.tech' and root as '/child/'
 url: http://www.i2arch.tech
 root: /
 permalink: :year/:month/:day/:title/
