@@ -2,15 +2,13 @@
 title: 【VSCode插件】background添加编辑器背景
 date: 2018-06-22 11:48:26
 tags:
-    - tool
-    - vscoode
+  - vscoode
+  - plugin
 category:
-    - Tool
-    - VSCode
-toc: true
+  - VSCode
 ---
 
-VScode编辑器对中文支持很好，插件丰富，主题也好看，所以目前已经由sublime转投Vscode了。在插件搜集中找到了可以自定义编辑器背景的插件`background`，炫酷的界面又可以优雅的装个叉了，所以立马上手尝试了一下。也对相关设置和过程进行一下记录。
+VScode 编辑器对中文支持很好，插件丰富，主题也好看，所以目前已经由 sublime 转投 Vscode 了。在插件搜集中找到了可以自定义编辑器背景的插件`background`，炫酷的界面又可以优雅的装个叉了，所以立马上手尝试了一下。也对相关设置和过程进行一下记录。
 
 <!--more-->
 
@@ -18,7 +16,7 @@ VScode编辑器对中文支持很好，插件丰富，主题也好看，所以�
 
 ## 1.下载地址
 
-VsCode插件Background官方介绍：[探个鲜](!https://marketplace.visualstudio.com/items?itemName=shalldie.background)
+VsCode 插件 Background 官方介绍：[探个鲜](!https://marketplace.visualstudio.com/items?itemName=shalldie.background)
 
 ## 2.安装扩展
 
@@ -29,7 +27,7 @@ VsCode插件Background官方介绍：[探个鲜](!https://marketplace.visualstud
 - 快捷键 `Ctrl+Shift+P`
 - 键入`install`找到`安装扩展`
 
-2). 直接打开左侧最下方的图标
+  2). 直接打开左侧最下方的图标
 
 (2) 搜索`background`
 
@@ -82,4 +80,4 @@ VsCode插件Background官方介绍：[探个鲜](!https://marketplace.visualstud
 }
 ```
 
-每次修改后都需要重启VSCode使修改生效。
+每次修改后都需要重启 VSCode 使修改生效。

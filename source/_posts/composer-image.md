@@ -2,12 +2,10 @@
 title: Composer设置国内镜像
 date: 2018-04-26 13:20:37
 tags:
-    - composer
-    - 镜像
+  - composer
+  - 镜像
 category:
-    - Tool
-    - Composer
-toc: true
+  - Composer
 ---
 
 使用 composer 时，输入命令执行后半天没有反应，并最后是失败的消息。如下载项目中的框架文件时：

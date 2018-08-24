@@ -2,13 +2,10 @@
 title: PHPStorm 配置 xdebug(phpStudy/wamp)
 date: 2018-05-05 17:44:49
 tags:
-    - tool
-    - phpstrom
-    - xdebug
+  - phpstrom
+  - xdebug
 category:
-    - Tool
-    - PHPStrom
-toc: true
+  - PHPStrom
 ---
 
 PHPStorm 是一款功能强大的 PHP 开发工具，自动补全、格式化样式等，以及最主要的 XDebug 功能，是开发中非常有用的功能，能有效查看程序代码的问题所在，并了解程序的执行过程。
@@ -24,7 +21,7 @@ PHPStorm 是一款功能强大的 PHP 开发工具，自动补全、格式化样
 官网地址：https://xdebug.org/wizard.php
 
 **注**：需要将 phpinfo()输出的信息通过查看源码的方式将所有信息复制粘贴到 XDebug 的下载界面，以选择合适的版本进行下载和配置
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/02.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fucho9kapjj30oi0gu40u.jpg)
 
 将 phpinfo()的查看网页源代码的信息复制粘贴进后出现上述检测信息，然后进行下载，并按提示操作。
 
@@ -37,12 +34,14 @@ PHPStorm 是一款功能强大的 PHP 开发工具，自动补全、格式化样
 [avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/04.png)
 
 （2）开启 xdebug
+
 ![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/05.png)
 如果需要调试 Joomla 代码，则开启 XDebug profiling 。但是不用的情况下开启这个功能会降低系统稳定性，所以如果不是需要请勿开启。
 
 （3）开启自动刷新
 
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/06.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchoygxclj30ht056q39.jpg)
+
 **phpStudy 环境**：
 phpStudy 集成环境已经集成了 xdebug 扩展，只需开启即可。
 
@@ -83,11 +82,11 @@ xdebug.remote_port = 9000
 1、修改配置后重启 apache 服务
 
 2、在 phpinfo()的输出信息中查看 xdebug 信息
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/08.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchppegacj30e802yjrl.jpg)
 
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/09.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchq03aygj30oi03e74b.jpg)
 
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/10.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchq788x8j30oi086ab2.jpg)
 
 ## 三、在 PHPStorm 中配置 xdebug
 
@@ -106,13 +105,15 @@ xdebug.remote_port = 9000
 5、配置 xdebug
 
 （1）进入配置
+
 ![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/15.png)
 
 （2）添加配置项，选择 PHP Web Page
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/16.png)
+
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchqnh71cj306k0dz3za.jpg)
 
 （3）配置参数
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/17.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchqxhn3oj30f80c974q.jpg)
 
 ## 四、安装浏览器插件（xdebug helper）
 
@@ -121,19 +122,22 @@ xdebug.remote_port = 9000
 ## 五、在项目中使用 XDebug
 
 1、开启浏览器中的 xdebug 插件
+
 ![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/19.png)
 
 2、在 PHPStorm 中进行监听
+
 ![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/20.png)
 
 3、在项目中设置断点标记
 ![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/21.png)
 
 4、在浏览器中访问项目
+
 ![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/22.png)
 
 5、运行后发现会在断电处停止
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/23.png)
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchrcso89j30bt00wa9u.jpg)
 
 6、开始调试
 
@@ -142,7 +146,8 @@ F7 键：单步调试
 Shift+F8：按区块调试
 
 下方的调试面板会出现一下调试信息
-![avatar](https://raw.githubusercontent.com/zqunor/MarkdownPic/master/phpstrom_xdebug/24.png)
+
+![](https://ws1.sinaimg.cn/large/005EgYNMgy1fuchrnbc2fj30m508dgma.jpg)
 
 ## 六、完成
 

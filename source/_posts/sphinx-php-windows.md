@@ -2,14 +2,10 @@
 title: windows7使用Sphinx+PHP+MySQL详细介绍
 date: 2018-05-14 09:41:08
 tags:
-    - sphinx
-    - windows
-    - thinkphp5
+  - sphinx
+  - thinkphp5
 category:
-    - Server
-    - PHP
-    - Sphinx
-toc: true
+  - PHP
 ---
 
 由于业务需要，需要做类似淘宝商城商品检索的功能，对于数据量很大的情况，MySQL 查询的效率损耗很大，需要使用专门的索引引擎进行搜索查询，实现功能，对于和 PHP 和 Mysql 的结合的索引引擎中， xunsearch 和 sphinx 是较为著名的，但由于 xunsearch 服务器端不支持 windows，所以暂且先考虑 sphinx 的使用。sphinx 目前已支持简体中文、繁体中文和英文的检索，不需要额外安装插件支持。
@@ -246,13 +242,12 @@ Revision	 $Revision$
 
 ### 1.样例数据表`test.documents`记录：
 
-```info
- id   group_id   group_id2   date_added             title             content
- 1    1             5        2018-05-14 09:12:25   test one           this is my test document number one. also checking search within phrases.
- 2    1             6        2018-05-14 09:12:25   test two           this is my test document number two
- 3    2             7        2018-05-14 09:12:25   another doc        this is another group
- 4    2             8        2018-05-14 09:12:25   doc number four    this is to test groups
-```
+| id  | group_id | group_id2 | date_added          | title           | content                                                                   |
+| --- | -------- | --------- | :------------------ | :-------------- | :------------------------------------------------------------------------ |
+| 1   | 1        | 5         | 2018-05-14 09:12:25 | test one        | this is my test document number one. also checking search within phrases. |
+| 2   | 1        | 6         | 2018-05-14 09:12:25 | test two        | this is my test document number two                                       |
+| 3   | 2        | 7         | 2018-05-14 09:12:25 | another doc     | this is another group                                                     |
+| 4   | 2        | 8         | 2018-05-14 09:12:25 | doc number four | this is to test groups                                                    |
 
 ### 2.PHP 代码实现
 

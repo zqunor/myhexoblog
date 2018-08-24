@@ -5,17 +5,19 @@
 # Site
 title: 程序小工
 subtitle: Just do it!
-description: 遇见更好的自己
-author: icoder
+description: 遇见更好的自己~
+author: 程序小工
 language: zh-Hans
+# language: zh-cn
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://www.i2arch.tech' and root as '/child/'
-url: http://www.i2arch.tech
+url: https://blog.i2arch.tech
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+favicon: /img/favicon.ico
 
 # Directory
 source_dir: source
@@ -30,17 +32,17 @@ skip_render:
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
-titlecase: false # Transform title into titlecase
+titlecase: true # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
-render_drafts: false
+render_drafts: true
 post_asset_folder: false
-relative_link: false
+relative_link: true
 future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -63,7 +65,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: xups
+theme: material-z
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -71,3 +73,50 @@ deploy:
   type: git
   repo: git@github.com:zqunor/zqunor.github.io.git
   branch: master
+
+# markdown:
+#   render:
+#     html: true
+#     xhtmlOut: false
+#     breaks: true
+#     linkify: true
+#     typographer: true
+#     quotes: '“”‘’'
+#   plugins:
+#     - markdown-it-abbr
+#     - markdown-it-footnote
+#     - markdown-it-ins
+#     - markdown-it-sub
+#     - markdown-it-sup
+#   anchors:
+#     # Minimum level for ID creation. (Ex. h2 to h6)
+#     level: 2
+#     # A suffix that is prepended to the number given if the ID is repeated.
+#     collisionSuffix: 'v'
+#     # If `true`, creates an anchor tag with a permalink besides the heading.
+#     permalink: false
+#     # Class used for the permalink anchor tag.
+#     permalinkClass: header-anchor
+#     # The symbol used to make the permalink
+#     permalinkSymbol: ¶
+
+# markdown_it_plus:
+#     highlight: true
+#     html: true
+#     xhtmlOut: true
+#     breaks: true
+#     langPrefix:
+#     linkify: true
+#     typographer:
+#     quotes: “”‘’
+#     pre_class: highlight
+
+toc:
+  maxdepth: 3
+  # class: toc
+  # slugify: transliteration
+  # decodeEntities: false
+  # anchor:
+  #   position: before
+  #   symbol: ¶
+  #   style: header-anchor

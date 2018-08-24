@@ -2,10 +2,9 @@
 title: 【总结】两个月的工作任务总结
 date: 2018-06-20 08:33:10
 tags:
-    - 工作总结
+  - 工作总结
 category:
-    - 工作总结
-toc: true
+  - 工作总结
 ---
 
 从 2018.4.2 工作以来，不知不觉已经工作两个多月，并在昨天约谈从这个月开始转正。从刚开始的自己学习，到逐渐接触公司的项目，并完成交付的功能模块，学到了很多，也发现了自己存在的不足，所以作此总结，激励自己，并鞭策自己，不骄不躁，不悲不怒，养成良好的心态，并坚持学习，保持热情！
@@ -250,7 +249,7 @@ $sphinx->SetFilter($filterkey, $filtervalue);
 
 # 四、代码展示
 
-## 1.PHPExcel使用--导出excel
+## 1.PHPExcel 使用--导出 excel
 
 ```php
 /**
@@ -306,9 +305,9 @@ function ExportExcel($expTitle, $expCellName, $expTableData, $setWidth, $output 
 }
 ```
 
-## 2.Sphinx在PHP项目中的应用
+## 2.Sphinx 在 PHP 项目中的应用
 
-### 1). Sphinx配置
+### 1). Sphinx 配置
 
 ```ini
 source keyword

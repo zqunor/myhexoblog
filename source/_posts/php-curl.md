@@ -2,15 +2,12 @@
 title: PHP扩展功能--cURL
 date: 2018-04-16 13:32:53
 tags:
-    - php
-    - curl
+  - curl
 category:
-    - Server
-    - PHP
-toc: true
+  - PHP
 ---
 
-cURL表示以命令行的形式请求某个url, 提交数据或获取相应数据。在日常的程序开发中会用到，因此，了解cURL的原理和过程，有助于实际工作和项目中的应用。
+cURL 表示以命令行的形式请求某个 url, 提交数据或获取相应数据。在日常的程序开发中会用到，因此，了解 cURL 的原理和过程，有助于实际工作和项目中的应用。
 
 <!--more-->
 
@@ -28,11 +25,11 @@ cURL表示以命令行的形式请求某个url, 提交数据或获取相应数�
 
 <!--more-->
 
-### 2、为什么要用 cURL?
+### 2、为什么要用 cURL？
 
 通常是通过表单（html）提交数据到 php 文件从而实现数据的交互，但是不能实现**php 文件之间**的数据和文件传输，所以，cURL 的应用场景主要是 php 文件之间的数据和文件传输。
 
-### 3、在 PHP 中怎么用 cURL?
+### 3、在 PHP 中怎么用 cURL？
 
 （1）php.ini 中开启 curl 扩展
 
@@ -57,16 +54,15 @@ extension=php_curl.dll
 
 参数：
 
-* post 方式：
-  * CURLOPT_POST
-  * CURLOPT_POSTFIELDS
-* get 方式：
-  * CURLOPT_RETURNTRANSFER
-  * CURLOPT_SSL_VERIFYHOST
-* 安全验证：
-
-  * CURLOPT_SSL_VERIFYPEER
-  * CURLOPT_SSL_VERIFYPEER
+- post 方式：
+  - CURLOPT_POST
+  - CURLOPT_POSTFIELDS
+- get 方式：
+  - CURLOPT_RETURNTRANSFER
+  - CURLOPT_SSL_VERIFYHOST
+- 安全验证：
+  - CURLOPT_SSL_VERIFYPEER
+  - CURLOPT_SSL_VERIFYPEER
 
 (3)curl_exec(); --- 执行 cURL 会话
 
