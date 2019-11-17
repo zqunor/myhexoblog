@@ -4,7 +4,7 @@ date: 2018-06-05 21:27:45
 tags:
   - mysql
 category:
-  - MySQL
+  - 【MySQL相关】
 ---
 
 MySQL 由于性能高、成本低、可靠性好，已经成为最流行的开源数据库，因此被广泛地应用在 Internet 上的中小型网站中。随着 MySQL 的不断成熟，它也逐渐用于更多大规模网站和应用，比如维基百科、Google 和 Facebook 等网站。非常流行的开源软件组合 LAMP 中的“M”指的就是 MySQL。

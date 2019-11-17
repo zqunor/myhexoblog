@@ -1,10 +1,10 @@
 ---
-title: 【Docker】--入门使用
+title: 【Docker】入门使用
 date: 2018-07-31 13:00:00
 tags:
   - docker
 category:
-  - Docker
+  - 【Docker相关】
 ---
 
 在学习 Docker 的镜像源设置和安装配置后，开始学习 Docker 的基本使用，包括服务进程的管理，容器、镜像的基本使用和管理。

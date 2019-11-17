@@ -1,12 +1,11 @@
 ---
-title: 系统学习 Docker 践行 DevOps 理念
+title: 【Docker】系统学习 Docker 践行 DevOps 理念
 date: 2018-12-11 21:02:12
 tags:
-    - Docker
-    - DevOps
+  - Docker
+  - DevOps
 category:
-    - Docker
-    - Linux
+  - 【Docker相关】
 ---
 
 Docker容器化技术已经越来越成为环境部署的主流趋势，一键式部署，并且保证线上线下环境的一致性，节省问题排查的时间，维护效率高，并且对底层硬件的要求比传统虚拟机低，可以提升系统资源的利用率，开发 Docker容器技术所实现的微服务架构，即：将一个环境的各个部分（nginx网络服务、web网站代码数据、mysql/redis/elasticsearch等数据库服务）进行分离，再通过网络架构实现网络通信。

@@ -5,7 +5,7 @@ tags:
   - vscoode
   - plugin
 category:
-  - VSCode
+  - 【开发工具】
 ---
 
 VScode 编辑器对中文支持很好，插件丰富，主题也好看，所以目前已经由 sublime 转投 Vscode 了。在插件搜集中找到了可以自定义编辑器背景的插件`background`，炫酷的界面又可以优雅的装个叉了，所以立马上手尝试了一下。也对相关设置和过程进行一下记录。

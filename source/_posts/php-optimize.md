@@ -4,7 +4,7 @@ date: 2018-07-09 08:57:55
 tags:
   - optimize
 category:
-  - PHP
+  - 【PHP相关】
 ---
 
 PHP 运行环境的性能考虑在 php 深入学习中需要逐步强化意识，并着手实现，其中对于性能分析的相关工具也需要有一定的掌握，比如压力测试工具 Apache Benchmark，Opcode 代码分析工具 vld，PHP 性能分析工具 XHProf，另外，对于日常编写代码时，也需要考虑 PHP 自身的特性，进行扬长避短，使用 isset 而不用 array_key_exists 方法，以及尽可能规避 PHP 自带的魔术方法。对 PHP 的运行流程也需要有一个大致的了解，知道 Opcode 在 PHP 执行过程中的阶段。需要逐渐加深对 PHP 深层次的思考。

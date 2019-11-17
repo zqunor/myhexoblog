@@ -5,7 +5,7 @@ tags:
   - phpstrom
   - xdebug
 category:
-  - PHPStrom
+  - 【开发工具】
 ---
 
 PHPStorm 是一款功能强大的 PHP 开发工具，自动补全、格式化样式等，以及最主要的 XDebug 功能，是开发中非常有用的功能，能有效查看程序代码的问题所在，并了解程序的执行过程。

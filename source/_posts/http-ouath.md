@@ -1,10 +1,10 @@
 ---
-title: 【PHP】第三方登录OAuth2.0
+title: 【HTTP】第三方登录OAuth2.0
 date: 2018-07-5 12:00:00
 tags:
   - oauth
 category:
-  - PHP
+  - 【HTTP相关】
 ---
 
 对于网站应用程序，涉及到登录和第三方 api 接口时，都会接触到 Token 等概念，而这部分的逻辑原理则是来自于 OAuth 授权协议，

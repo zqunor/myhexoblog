@@ -5,7 +5,7 @@ tags:
   - thinkphp5
   - 微信小程序
 category:
-  - PHP
+  - 【PHP框架】
 ---
 
 ThinkPHP5 从入门到深入学习，结合实战项目深入理解 ThinkPHP5 的特性和使用方法。编写完成简单的基于 RESTFul 接口，实现相应功能，掌握控制器、模型、异常处理、数据校验的使用。

@@ -4,7 +4,7 @@ date: 2018-07-31 9:00:00
 tags:
   - 镜像
 category:
-  - Linux
+  - 【Linux相关】
 ---
 
 当使用 linux 安装包命令安装相关软件时，会提示`Connection timed out`,表示连接超时，即访问国外网址受限，可以切换软件源地址为国内的。

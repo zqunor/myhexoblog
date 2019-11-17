@@ -4,7 +4,7 @@ date: 2018-07-31 10:00:00
 tags:
   - 镜像
 category:
-  - Docker
+  - 【Docker相关】
 ---
 
 使用 docker 拉取 Docker Hub 上镜像时，可能会由于网络限制，导致下载失败。可以将 docker 的镜像源设置为国内的镜像，

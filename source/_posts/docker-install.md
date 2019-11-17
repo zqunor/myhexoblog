@@ -1,10 +1,10 @@
 ---
-title: 【Docker】--安装与配置
+title: 【Docker】安装与配置
 date: 2018-07-31 11:00:00
 tags:
   - docker
 category:
-  - Docker
+  - 【Docker相关】
 ---
 
 docker 是 linux 虚拟化技术，能够一键式搭建开发环境，并且能保证运维、开发、上线部署的环境完全一致，避免了运行环境差异性带来的问题。

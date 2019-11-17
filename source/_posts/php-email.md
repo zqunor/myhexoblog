@@ -4,7 +4,7 @@ date: 2018-04-16 13:38:54
 tags:
   - email
 category:
-  - PHP
+  - 【PHP相关】
 ---
 
 ### 1、下载 PHPMailer 源码
